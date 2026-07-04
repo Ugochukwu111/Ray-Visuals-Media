@@ -50,7 +50,7 @@ export default function Testimonials() {
     <section className="section-padding bg-black testimonial-section">
       <div className="container">
         <h4 className="text-center text-inverse">
-          <span className="text-success">Test</span>imonials{" "}
+          <span className="text-success">{testimonialsData.length + 10}+ Test</span>imonials{" "}
           <span className="text-success">!</span>{" "}
         </h4>
         <p className="text-center text-muted">

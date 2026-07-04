@@ -1,10 +1,11 @@
 import { FaWhatsapp, FaInstagram,} from "react-icons/fa6";
 import './Hero.css';
 import profile from "../assets/images/ray-visuals.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Hero() {
+  const navigate = useNavigate()
   return (
      <section className="flex flex-col  items-center justify-between hero-section h-screen ">
              <div className="container flex flex-col justify-end items-center  flex-1  ">
@@ -34,7 +35,9 @@ export default function Hero() {
                  </p>
                  <div className="flex gap-1 hero-buttons">
                    <button className="btn btn-primary">Discuss a Project</button>
-                   <button className="btn  bg-white">Explore Visuals</button>
+                   <button
+                    onClick={navigate('/projects')}
+                    className="btn  bg-white">Explore Visuals</button>
                  </div>
                </div>
    
