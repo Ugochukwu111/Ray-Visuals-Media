@@ -10,16 +10,18 @@ export default function Hero() {
              <div className="container flex flex-col justify-end items-center  flex-1  ">
                <div className="flex flex-col justify-center  items-center hero-content">
                 <Link
+                 className="hero-whats-app-icon"
                  target="_blank" 
                  rel="noopener noreferrer"  
                  to="https://api.whatsapp.com/send/?phone=2348123486338">
-                  <FaWhatsapp size={50} className="hero-whats-app-icon" />
+                  <FaWhatsapp  size="clamp(2.5rem, 1.5rem + 2vw, 3.125rem)"  />
                 </Link>
-                <Link 
+                <Link
+                 className="hero-ig-icon" 
                  target="_blank" 
                  rel="noopener noreferrer"  
                  to="https://www.instagram.com/rayvisuals.media/?hl=en">
-                  <FaInstagram size={50} className="hero-ig-icon" />``
+                  <FaInstagram size="clamp(2.5rem, 1.5rem + 2vw, 3.125rem)"  />``
                 </Link>
                 <h1 className="text-center text-inverse">
                   Ray Visuals Media <br /> Every Frame Tells a story
@@ -44,7 +46,7 @@ export default function Hero() {
                  loop
                  muted
                  className="hero-img"
-                //  poster={profile}
+                //  poster='/video-place-holder.svg'
                ></video>
              </figure>
    

@@ -71,6 +71,7 @@ nav ul li a.active {
 @media (max-width: 768px) {
   nav {
     top: 0.25rem;
+    padding: 0;
   }
 
   nav ul {
@@ -78,14 +79,15 @@ nav ul li a.active {
     justify-content: center;
     gap: 0.35rem;
     padding: 0.25rem;
+    padding: 0;
   }
 
   nav ul li a {
-    padding: 0.45rem 0.6rem;
+    padding: 0.5rem 0.25rem;
     font-size: 0.9rem;
   }
 
   .logo-nav-bar-wrapper {
-    padding: 0.4rem 0.6rem;
+    padding: 0.5rem 0.3rem;
   }
 }

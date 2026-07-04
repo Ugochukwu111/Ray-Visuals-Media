@@ -96,7 +96,7 @@ h5 { font-size: clamp(1.15rem, 0.8rem + 1.5vw, 1.75rem); }
 h6 { font-size: clamp(1rem, 0.8rem + 1vw, 1.4rem); }
 
 p {
-  font-size: clamp(0.9rem, 0.85rem + 0.5vw, 1rem);
+font-size: clamp(0.75rem, 0.45rem + 0.9vw, 1rem);
 }
 
 image,video{
