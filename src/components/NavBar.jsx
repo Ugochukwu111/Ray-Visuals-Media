@@ -13,22 +13,22 @@ function NavBar() {
   return (
     <nav className="flex items-center justify-center">
       <div className="flex items-center justify-center logo-nav-bar-wrapper">
-        <NavLink to="/">
-          <img
-            src={logo}
-            height={100}
-            width={100}
-            style={{
-              height: 30,
-              width: 30,
-              borderRadius: ".25rem",
-              marginRight: ".5em",
-            }}
-            alt=""
-          />
-        </NavLink>
-
         <ul className="flex gap-2 items-center justify-center w-fit">
+          <li>
+          <NavLink to="/">
+            <img
+              src={logo}
+              height={100}
+              width={100}
+              style={{
+                height: 30,
+                width: 30,
+                borderRadius: ".25rem",
+              }}
+              alt="Ray"
+            />
+          </NavLink>
+          </li>
           {navLinks.map((link) => (
             <li key={link.path} className="fw600">
               <NavLink to={link.path} className="tab-link text-primary">
@@ -62,12 +62,13 @@ function NavBar() {
           ))}
 
           <li className="fw600 ">
-            <NavLink
-              to="https://api.whatsapp.com/send/?phone=2348123486338"
+            <a
+              href="https://api.whatsapp.com/send/?phone=2348123486338"
               className="bg-white text-primary flex items-center gap-1"
+              rel="noopener noreferrer"
             >
               Contact <ArrowRight size={18} />
-            </NavLink>
+            </a>
           </li>
         </ul>
       </div>
