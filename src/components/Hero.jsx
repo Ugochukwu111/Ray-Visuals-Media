@@ -1,6 +1,7 @@
 import { FaWhatsapp, FaInstagram,} from "react-icons/fa6";
 import './Hero.css';
 import profile from "../assets/images/ray-visuals.webp";
+import { Link } from "react-router-dom";
 
 
 export default function Hero() {
@@ -8,11 +9,21 @@ export default function Hero() {
      <section className="flex flex-col  items-center justify-between hero-section h-screen ">
              <div className="container flex flex-col justify-end items-center  flex-1  ">
                <div className="flex flex-col justify-center  items-center hero-content">
-                 <FaWhatsapp size={50} className="hero-whats-app-icon" />
-                 <FaInstagram size={50} className="hero-ig-icon" />
-                 <h1 className="text-center text-inverse">
-                   Ray Visuals Media <br /> Every Frame Tells a story
-                 </h1>
+                <Link
+                 target="_blank" 
+                 rel="noopener noreferrer"  
+                 to="https://api.whatsapp.com/send/?phone=2348123486338">
+                  <FaWhatsapp size={50} className="hero-whats-app-icon" />
+                </Link>
+                <Link 
+                 target="_blank" 
+                 rel="noopener noreferrer"  
+                 to="https://www.instagram.com/rayvisuals.media/?hl=en">
+                  <FaInstagram size={50} className="hero-ig-icon" />``
+                </Link>
+                <h1 className="text-center text-inverse">
+                  Ray Visuals Media <br /> Every Frame Tells a story
+                </h1>
                  <p className="text-inverse text-center">
                    A premium production house specializing in high-end commercial
                    and editorial videography.
