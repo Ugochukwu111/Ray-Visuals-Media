@@ -3,10 +3,12 @@ import Visuals from './Pages/Visuals';
 import TestimonialsPage from './Pages/TestimonialsPage';
 import ProjectsPage from './Pages/ProjectsPage';
 import NavBar from './components/NavBar';
+import  ScrollToTop  from './components/ScrollToTop';
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <NavBar />
       <Routes>
         <Route path="/" element={<Visuals />} />
