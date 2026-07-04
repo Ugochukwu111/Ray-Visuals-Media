@@ -6,9 +6,85 @@ import ProjectSection from "../components/ProjectSection";
 import Testimonials from "../components/Testimonials";
 import Faq from "../components/Faq";
 import mrRayVisuals from "../assets/images/mr-ray-smile.webp";
+import { motion } from "framer-motion";
 
 
 import profile from "../assets/images/ray-visuals.webp";
+
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const image = {
+  hidden: {
+    opacity: 0,
+    x: -80,
+    scale: 0.95,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const heading = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    filter: "blur(15px)",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
+
+const text = {
+  hidden: {
+    opacity: 0,
+    y: 25,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
+
+const stat = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 220,
+      damping: 16,
+    },
+  },
+};
 
 export default function Visuals() {
   return (
@@ -16,56 +92,97 @@ export default function Visuals() {
       <main>
         <Hero />
 
-        <section className=" section-padding about-us-section">
-          <div className="container flex gap-3 justify-between about-us-container">
-            <figure className="">
-              <img src={profile} alt="Ray Visuals" />
-            </figure>
-            <div>
-              <h2>About Us</h2>
-              <p className="text-muted">
-                We are a premium visual production studio specializing in
-                high-end cinematography for corporate events, luxury brands,
-                conferences, and large-scale experiences.
-                <br />
-                <br />
-                Our work goes beyond capturing moments — we craft intentional,
-                emotionally driven visual stories that elevate your brand and
-                preserve the essence of every event with cinematic precision.
-                <br />
-                <br />
-                Trusted by event organizers, executives, and creative agencies,
-                we collaborate with clients who demand excellence, delivering
-                visuals that communicate impact, sophistication, and lasting
-                value.
-              </p>
-              <br />
-              <h4 className="text-end">Legacy</h4>
-              <br />
-              <div className="flex justify-between bg-success-light our-numbers-container">
-                <p className="text-center">
-                  <span className="d-block text-muted">events covered</span>
-                  <span className="d-block text-success fw700 number">
-                    150+
-                  </span>
-                </p>
-                <p className="text-center ">
-                  <span className="d-block text-muted">Live Production</span>
-                  <span className="d-block text-success fw700 number">
-                    300+
-                  </span>
-                </p>
-                <p className="text-center">
-                  <span className="d-block text-muted ">
-                    Corporate Conferences
-                  </span>
-                  <span className="d-block text-success fw700 number">50+</span>
-                </p>
-              </div>
-              <div></div>
-            </div>
-          </div>
-        </section>
+        <motion.section
+  className="section-padding about-us-section"
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.3 }}
+>
+  <div className="container flex gap-3 justify-between about-us-container">
+
+    <motion.figure variants={image}>
+      <img src={profile} alt="Ray Visuals" />
+    </motion.figure>
+
+    <div>
+
+      <motion.h2 variants={heading}>
+        About Us
+      </motion.h2>
+
+      <motion.p
+        variants={text}
+        className="text-muted"
+      >
+        We are a premium visual production studio specializing in
+        high-end cinematography for corporate events, luxury brands,
+        conferences, and large-scale experiences.
+        <br /><br />
+        Our work goes beyond capturing moments — we craft intentional,
+        emotionally driven visual stories that elevate your brand and
+        preserve the essence of every event with cinematic precision.
+        <br /><br />
+        Trusted by event organizers, executives, and creative agencies,
+        we collaborate with clients who demand excellence, delivering
+        visuals that communicate impact, sophistication, and lasting
+        value.
+      </motion.p>
+
+      <motion.h4
+        variants={text}
+        className="text-end"
+      >
+        Legacy
+      </motion.h4>
+
+      <motion.div
+        variants={container}
+        className="flex justify-between bg-success-light our-numbers-container"
+      >
+
+        <motion.p
+          variants={stat}
+          className="text-center"
+        >
+          <span className="d-block text-muted">
+            Events Covered
+          </span>
+          <span className="d-block text-success fw700 number">
+            150+
+          </span>
+        </motion.p>
+
+        <motion.p
+          variants={stat}
+          className="text-center"
+        >
+          <span className="d-block text-muted">
+            Live Production
+          </span>
+          <span className="d-block text-success fw700 number">
+            300+
+          </span>
+        </motion.p>
+
+        <motion.p
+          variants={stat}
+          className="text-center"
+        >
+          <span className="d-block text-muted">
+            Corporate Conferences
+          </span>
+          <span className="d-block text-success fw700 number">
+            50+
+          </span>
+        </motion.p>
+
+      </motion.div>
+
+    </div>
+
+  </div>
+</motion.section>
 
         <section className=" founder-section">
           <div className=" flex  justify-between container container founder-container bg-white">
