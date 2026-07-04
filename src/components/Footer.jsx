@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-inverse border">
       <div className="container  text-secondary  w-full">
-        <div className="flex justify-between">
+        <div className="flex justify-between upper-container">
           <div>
             <figure>
               <img style={{

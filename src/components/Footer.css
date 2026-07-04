@@ -20,6 +20,24 @@ footer .large-text{
 @media (max-width: 768px) {
   footer {
     padding: 3rem 0.75rem 1rem;
+
+  }
+
+  footer .upper-container{
+    flex-direction: column;
+      gap: 3em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  footer .upper-container > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    gap: 2em;
   }
 
   footer .large-text {

@@ -85,3 +85,10 @@
   opacity: 1;
   transform: translateY(0); /* Returns to original position */
 }
+
+@media (max-width: 768px) {
+  .project-content{
+     margin-bottom: 5rem;
+     padding-left: .5em;
+  }
+}
