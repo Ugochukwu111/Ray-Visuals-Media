@@ -4,11 +4,13 @@ import TestimonialsPage from './Pages/TestimonialsPage';
 import ProjectsPage from './Pages/ProjectsPage';
 import NavBar from './components/NavBar';
 import  ScrollToTop  from './components/ScrollToTop';
+import WhatsAppIcon from './components/WhatsAppIcon';
 
 function App() {
   return (
     <>
       <ScrollToTop />
+      <WhatsAppIcon />
       <NavBar />
       <Routes>
         <Route path="/" element={<Visuals />} />
