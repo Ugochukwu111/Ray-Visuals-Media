@@ -36,7 +36,7 @@ export default function Hero() {
                  <div className="flex gap-1 hero-buttons">
                    <button className="btn btn-primary">Discuss a Project</button>
                    <button
-                    onClick={navigate('/projects')}
+                    onClick={() => navigate('/projects')}
                     className="btn  bg-white">Explore Visuals</button>
                  </div>
                </div>
