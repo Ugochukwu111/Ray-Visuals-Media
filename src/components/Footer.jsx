@@ -1,4 +1,5 @@
 import './Footer.css'
+import logo from '/favicon-32x32.png'
 
 export default function Footer() {
   return (
@@ -6,7 +7,14 @@ export default function Footer() {
       <div className="container  text-secondary  w-full">
         <div className="flex justify-between">
           <div>
-          <h5 className="text-inverse">we capture reality</h5>
+            <figure>
+              <img style={{
+                width: 40,
+                height:40,
+                borderRadius: '.25rem',
+              }} src={logo} alt="Ray Visuals Media Logo" />
+            </figure>
+            <h5 className="text-inverse">we capture reality</h5>
           </div>
 
           <div className="flex justify-between gap-2">
@@ -31,6 +39,9 @@ export default function Footer() {
         </div>
         <div>
           <h6 className="text-inverse text-center large-text">Ray Visuals Media</h6>
+          <p className="text-center">
+            &copy; {new Date().getFullYear()} Ray Visuals Media. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
