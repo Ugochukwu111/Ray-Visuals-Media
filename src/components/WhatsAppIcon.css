@@ -2,19 +2,45 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
+
   background-color: #25D366;
   color: white;
+
   border-radius: 50%;
   padding: 12px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-decoration: none;
+
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-   width: clamp(50px, 5vw, 74px);
+
+  width: clamp(50px, 5vw, 74px);
   height: clamp(50px, 5vw, 74px);
+
   animation: twinkleJump 4s ease-in-out infinite;
+
   z-index: 100;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity .35s ease;
+}
+
+/* Visible */
+.whatsapp-icon.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hidden */
+.whatsapp-icon.hide {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ✨ Twinkle Jump */
