@@ -5,27 +5,56 @@ import { TestimonialCard } from "./TestimonialCard";
 import './Testimonials.css';
 
 // 1. Array of Objects containing data, video, and fallback images
-const testimonialsData = [
+const testimonialsData  = [
   {
     id: 1,
-    name: "Davido Adeleke",
-    quote: "Securing my dream property through Dilux was seamless. The attention to detail and premium service is exactly what you need in the real estate market. Highly recommended.",
-    videoSrc: "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1778295661/Day_1_at_the_PAPSS_COWRY_2025_it_was_an_honor_capturing_this_memorable_conference_that_brought_bx81ed.mp4",
-    fallbackImg: null
+    name: "Corporate Event Director",
+    quote:
+      "Ray Visuals delivered more than a highlight reel—they created a cinematic experience that perfectly reflected the scale and prestige of our event. Every frame felt intentional.",
+    videoSrc:
+      "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1778295661/Day_1_at_the_PAPSS_COWRY_2025_it_was_an_honor_capturing_this_memorable_conference_that_brought_bx81ed.mp4",
+    fallbackImg:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop"
   },
   {
     id: 2,
-    name: "Burna Boy",
-    quote: "I've seen many platforms, but the portfolio of luxury properties here is unmatched. They handled the paperwork entirely while I focused on the tours.",
-    videoSrc: null, // Intentionally left null to demonstrate the fallback image
-    fallbackImg: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&h=600&fit=crop"
+    name: "Marketing Lead",
+    quote:
+      "Professional, reliable, and incredibly creative. Their team understood our vision immediately and transformed it into visuals that strengthened our brand presence.",
+    videoSrc:
+      "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1778295661/Day_1_at_the_PAPSS_COWRY_2025_it_was_an_honor_capturing_this_memorable_conference_that_brought_bx81ed.mp4",
+    fallbackImg:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop"
   },
   {
     id: 3,
-    name: "Tiwa Savage",
-    quote: "Transparent, luxury, and premium. Found the perfect secluded estate. The Dilux team knows exactly how to treat their high-end clients.",
-    videoSrc: null,
-    fallbackImg: "https://images.unsplash.com/photo-1600607687931-cebf5741dc56?w=500&h=600&fit=crop"
+    name: "Conference Organizer",
+    quote:
+      "The attention to detail was exceptional. Watching the final production reminded us of moments we didn't even realize had such impact. Outstanding work from start to finish.",
+    videoSrc:
+      "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1778295661/Day_1_at_the_PAPSS_COWRY_2025_it_was_an_honor_capturing_this_memorable_conference_that_brought_bx81ed.mp4",
+    fallbackImg:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop"
+  },
+  {
+    id: 4,
+    name: "Creative Director",
+    quote:
+      "Working with Ray Visuals felt effortless. Their ability to anticipate key moments and tell compelling stories through film is what truly sets them apart.",
+    videoSrc:
+      "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1778295661/Day_1_at_the_PAPSS_COWRY_2025_it_was_an_honor_capturing_this_memorable_conference_that_brought_bx81ed.mp4",
+    fallbackImg:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop"
+  },
+  {
+    id: 5,
+    name: "Business Executive",
+    quote:
+      "From planning to final delivery, everything was handled with confidence and precision. The finished video elevated our event and continues to leave a lasting impression.",
+    videoSrc:
+      "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1778295661/Day_1_at_the_PAPSS_COWRY_2025_it_was_an_honor_capturing_this_memorable_conference_that_brought_bx81ed.mp4",
+    fallbackImg:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop"
   }
 ];
 
