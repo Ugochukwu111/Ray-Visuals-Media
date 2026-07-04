@@ -1,0 +1,164 @@
+
+.testimonial-card-container video {
+  width: 380px;
+  height: 450px;
+  border-radius: 0.5rem;
+}
+
+.testimonial-section {
+  position: relative;
+  overflow: hidden; 
+}
+
+/* Base styles for all three shapes */
+.ambient-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px); /* This creates the smooth gradient effect */
+  opacity: 0.4; /* Adjust this to make the colors brighter or dimmer */
+  z-index: 0; /* Keeps them behind the container */
+  pointer-events: none; /* Ensures they don't block clicks on your buttons */
+  will-change: transform;
+}
+
+/* Position the Green Orb */
+.shape-green {
+  width: 550px;
+  height: 550px;
+  background-color: #22c55e; /* Adjust to your preferred green */
+  top: -100px;
+  left: -100px;
+  animation: driftRight 4s ease-in-out infinite alternate;
+}
+
+/* Position the White Orb */
+.shape-white {
+  width: 250px;
+  height: 250px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers it perfectly */
+  opacity: 0.15; /* White is very strong on black, so keep opacity low */
+  animation: driftLeft 5s ease-in-out infinite alternate;
+}
+
+/* Position the Blue Orb */
+.shape-blue {
+  width: 400px;
+  height: 400px;
+  background-color: #3b82f6; /* Adjust to your preferred blue */
+  bottom: -150px;
+  right: -100px;
+  animation: driftLeft 8s ease-in-out infinite alternate;
+}
+
+@keyframes driftRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Uses vw (viewport width) so it scales on mobile vs desktop */
+    transform: translateX(30vw); 
+  }
+}
+
+/* Move shapes towards the left */
+@keyframes driftLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30vw);
+  }
+}
+
+
+
+.testimonial-section .carousel-card {
+  border: 1px solid var(--text-muted);
+  width: 250px;
+  padding: 0.25em;
+  min-height: 100px;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.testimonial-section .carousel-card figure {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+}
+
+.testimonial-section .carousel-card .name {
+  font-size: 0.9rem;
+}
+
+.testimonial-section .carousel-card .testimonial {
+  font-size: 0.8rem;
+}
+
+.carousel {
+  width: 95%;
+  display: flex;
+  margin: 100px auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 1em;
+  align-self: start;
+}
+
+.group {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  animation: spin 25s linear infinite;
+  gap: 1em;
+}
+
+@keyframes spin {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card-layout {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .testimonial-card-container video {
+    width: min(100%, 320px);
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .testimonial-section .carousel-card {
+    width: min(100%, 220px);
+    padding: 0.5em;
+    min-height: auto;
+  }
+
+  .carousel {
+    width: 100%;
+    margin: 2rem auto;
+    gap: 0.75rem;
+  }
+
+  .group {
+    gap: 0.75rem;
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ambient-shape {
+    display: none;
+  }
+}

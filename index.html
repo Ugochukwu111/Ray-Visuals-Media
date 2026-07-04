@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Ray Visuals Media</title>
+
+    <style>
+      /* 
+       * Inline styles guarantee this loads instantly.
+       * I used a black background for a cinematic feel, 
+       * but you can change it to #fff and text to #000 if you prefer a light theme.
+       */
+      body, html {
+        margin: 0;
+        padding: 0;
+        background-color: #000000; 
+      }
+
+      .initial-loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000;
+        /* Using one of the fonts you imported */
+        font-family: 'Montserrat Alternates', sans-serif; 
+      }
+
+      .loader-title {
+        font-family: 'Fraunces', serif; /* Premium serif for the brand */
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 10px 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        
+        /* The pulsing animation */
+        animation: pulseGlow 1.5s ease-in-out infinite alternate;
+      }
+
+      .loader-tagline {
+        font-size: 1rem;
+        font-weight: 300;
+        color: #a3a3a3; /* Muted grey */
+        letter-spacing: 1px;
+        margin: 0;
+        
+        /* Starts invisible, then fades and slides up after a tiny delay */
+        opacity: 0;
+        animation: slideUpFade 1s ease-out 0.4s forwards; 
+      }
+
+      /* --- Animations --- */
+      @keyframes pulseGlow {
+        0% {
+          opacity: 0.8;
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        100% {
+          opacity: 1;
+          /* Adding a tiny hint of your signature green to the glow */
+          text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(34, 197, 94, 0.3); 
+        }
+      }
+
+      @keyframes slideUpFade {
+        0% {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Everything in here is wiped out the millisecond React is ready -->
+      <div class="initial-loader">
+        <h1 class="loader-title">Ray Visuals Media</h1>
+        <p class="loader-tagline">Crafting Cinematic Legacy</p>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+:root {
+  /* ======================
+     BRAND COLORS
+  ====================== */
+  --color-primary: #0A0A0A;      /* Premium Jet Black */
+  --color-secondary: #737373;    /* Cinematic Grey Accent */
+
+  /* ======================
+     NEUTRAL SYSTEM
+  ====================== */
+  --color-bg: #FAFAFA;           /* Gallery Soft White */
+  --color-surface: #FFFFFF;      /* Pure White Surface */
+  --color-border: #dedddd;       /* Crisp Light Grey */
+
+  /* ======================
+     TEXT SYSTEM
+  ====================== */
+  --text-primary: #121212;       /* High-contrast Black */
+  --text-muted: #8E8E8E;         /* Legible Medium Grey */
+  --text-inverse: #FFFFFF;       /* Pure White Text */
+  --text-fail: #DC3545;          /* Alert Red */
+
+  /* ======================
+     STATUS COLORS
+  ====================== */
+  --color-success: #28A745;      /* Success Green */
+  --color-success-light: #E8F5E9; /* Soft Green Background */
+
+  /* ======================
+     RAW COLORS (optional fallback)
+  ====================== */
+  --black: #000000;
+  --white: #FFFFFF;
+
+  /* ======================
+     GRADIENTS
+  ====================== */
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary),
+    #2A2A2A,
+    var(--color-primary)
+  );
+
+  --gradient-accent: linear-gradient(
+    45deg,
+    var(--color-secondary),
+    var(--color-bg)
+  );
+
+  /* ======================
+     TYPOGRAPHY
+  ====================== */
+ --font-heading: 'Fraunces', serif;
+  --font-body: 'Montserrat Alternates', sans-serif;
+  --font-special: 'Sansita', sans-serif;
+  
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  font-family: var(--font-body), sans-serif;
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100svh;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+h1 { font-size: clamp(2.25rem, 1.5rem + 4vw, 4.5rem); }
+h2 { font-size: clamp(1.85rem, 1.2rem + 3.5vw, 3.5rem); }
+h3 { font-size: clamp(1.55rem, 1rem + 2.5vw, 2.75rem); }
+h4 { font-size: clamp(1.35rem, 0.9rem + 2vw, 2.2rem); }
+h5 { font-size: clamp(1.15rem, 0.8rem + 1.5vw, 1.75rem); }
+h6 { font-size: clamp(1rem, 0.8rem + 1vw, 1.4rem); }
+
+p {
+  font-size: clamp(0.9rem, 0.85rem + 0.5vw, 1rem);
+}
+
+image,video{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+figure{
+  overflow: hidden;
+}
+
+svg { transition: all 200ms ease-in-out; }
+
+.section-padding{
+  padding: 5em .5em;
+  display: grid;
+  place-items: center;
+}
+
+.h-full
+
+main{
+  padding-top: 3.5em;
+}
+
+section{
+  min-height: 100svh;
+}
+
+/* Backgrounds */
+.bg-primary { background: var(--color-primary); }
+.bg-secondary { background: var(--color-secondary); }
+.bg-surface { background: var(--color-surface); }
+.bg-light { background: var(--color-bg); }
+.bg-success { background: var(--color-success); }
+.bg-success-light { background: var(--color-success-light); }
+.bg-white { background: var(--white); }
+.bg-black { background: var(--black); }
+.bg-muted { background-color: var( --color-border); }
+
+/* Text */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-inverse { color: var(--text-inverse); }
+.text-accent { color: var(--color-primary); }
+.text-success { color: var(--color-success); }
+.text-fail { color: var(--text-fail); }
+
+.border { border: 2px solid var(--color-primary); }
+.border-light { border: 1px solid var(--color-border); }
+
+/* =====================
+   LAYOUT UTILITIES
+   =====================
+ */
+.d-block { display: block; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-1 { flex: 1; }
+
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end {align-items: end;}
+
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: end;}
+
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+
+.w-full { width: 100%; }
+.w-fit{width: fit-content;}
+.h-full { height: 100%; }
+.h-screen { min-height: 100svh; }
+
+/* ===================
+    TEXT UTILITIES
+    =====================
+ */
+
+ .text-start { text-align: start; }
+ .text-center { text-align: center; }
+ .text-end { text-align: end; }
+
+ .fw400 { font-weight: 400; }
+ .fw600 { font-weight: 600; }
+ .fw700 { font-weight: 700; }
+
+/* ===================
+    COMPONENT UTILITIES
+    =====================
+ */
+
+ .logo {
+   width: clamp(50px, 6vw, 80px);
+ }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: .5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  margin: .25em 0;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .section-padding {
+    padding: 3rem 0.75rem;
+  }
+
+  /* main {
+    padding-top: 2.5rem;
+  } */
+
+  section {
+    min-height: auto;
+  }
+
+  .flex-row {
+    flex-direction: column;
+  }
+
+  .justify-between {
+    justify-content: center;
+  }
+
+  .gap-2 {
+    gap: 0.75rem;
+  }
+
+  .gap-3 {
+    gap: 1rem;
+  }
+}

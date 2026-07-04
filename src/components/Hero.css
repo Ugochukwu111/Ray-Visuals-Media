@@ -1,0 +1,155 @@
+.hero-img-container {
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+}
+
+.hero-section {
+  justify-content: space-between;
+  background-color: var(--black);
+}
+
+.hero-content {
+  text-shadow: 2px 2px 4px black;
+  position: relative;
+  z-index: 1;
+
+}
+
+.hero-whats-app-icon,
+.hero-ig-icon {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  will-change: transform, filter;
+}
+
+/* -------------------- */
+/* Floating Animations  */
+/* -------------------- */
+
+.hero-whats-app-icon {
+  animation:
+    softFloat 4.5s ease-in-out infinite,
+    glowPulseGreen 3s ease-in-out infinite;
+}
+
+.hero-ig-icon {
+  animation:
+    softFloat 5.5s ease-in-out infinite 1.2s,
+    glowPulseIg 3.5s ease-in-out infinite;
+}
+
+@keyframes softFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* -------------------- */
+/* Glow Animations      */
+/* -------------------- */
+
+@keyframes glowPulseGreen {
+  0%,
+  100% {
+    filter:
+      drop-shadow(0 0 6px #25d366)
+      drop-shadow(0 0 14px rgba(37, 211, 102, 0.6))
+      drop-shadow(0 0 24px rgba(37, 211, 102, 0.4));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 12px #25d366)
+      drop-shadow(0 0 24px rgba(37, 211, 102, 0.85))
+      drop-shadow(0 0 40px rgba(37, 211, 102, 0.7));
+  }
+}
+
+@keyframes glowPulseIg {
+  0%,
+  100% {
+    filter:
+      drop-shadow(0 0 6px #d62976)
+      drop-shadow(0 0 14px rgba(214, 41, 118, 0.6))
+      drop-shadow(0 0 24px rgba(150, 47, 191, 0.4));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 12px #fa7e1e)
+      drop-shadow(0 0 24px rgba(214, 41, 118, 0.9))
+      drop-shadow(0 0 40px rgba(150, 47, 191, 0.75));
+  }
+}
+
+/* -------------------- */
+/* WhatsApp             */
+/* -------------------- */
+
+.hero-whats-app-icon {
+  color: #25d366;
+  right: 4em;
+  top: 1em;
+}
+
+.hero-whats-app-icon:hover {
+  animation-play-state: paused;
+
+  transform: translateY(-10px) scale(1.18) rotate(-8deg);
+
+  filter:
+    drop-shadow(0 0 10px #25d366)
+    drop-shadow(0 0 25px #25d366)
+    drop-shadow(0 0 45px rgba(37, 211, 102, 0.9));
+}
+
+/* -------------------- */
+/* Instagram            */
+/* -------------------- */
+
+.hero-ig-icon {
+  left: 4em;
+  top: 2em;
+
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-ig-icon:hover {
+  animation-play-state: paused;
+
+  transform: translateY(-10px) scale(1.18) rotate(8deg);
+
+  filter:
+    drop-shadow(0 0 10px #fa7e1e)
+    drop-shadow(0 0 25px #d62976)
+    drop-shadow(0 0 45px #962fbf);
+}

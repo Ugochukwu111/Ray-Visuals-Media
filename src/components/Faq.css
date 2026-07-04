@@ -1,0 +1,178 @@
+/* --- FAQ Section Architecture --- */
+.faq-section {
+  position: relative;
+}
+
+.faq-stack-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding-bottom: 5rem; /* Extra buffer space at the bottom for stacking */
+}
+
+/* Base Card Styling */
+.faq-card {
+  background-color: #111111; /* Slight elevation from bg-black */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.8);
+  
+  /* The Magic Stacking Engine (Pure CSS) */
+  position: sticky;
+}
+
+/* Stagger the stacking position so top edges remain visible as you scroll */
+.faq-card:nth-child(1) { top: 100px; }
+.faq-card:nth-child(2) { top: 115px; }
+.faq-card:nth-child(3) { top: 130px; }
+.faq-card:nth-child(4) { top: 145px; }
+.faq-card:nth-child(5) { top: 160px; }
+
+/* Visual feedback on hover */
+.faq-card:hover {
+  border-color: rgba(34, 197, 94, 0.4); /* Matches text-success green glow */
+}
+
+/* When the details tag is open, give it a slight elevation */
+.faq-card[open] {
+  background-color: #161616;
+  border-color: #22c55e;
+}
+
+/* --- Accordion Summary Styling --- */
+.faq-summary {
+  list-style: none; /* Remove default browser triangle */
+  cursor: pointer;
+  user-select: none;
+  gap: 1rem;
+}
+
+/* Remove Webkit default marker */
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-summary h5 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.faq-summary .mr-2 {
+  margin-right: 0.75rem;
+}
+
+/* --- Icon Switcher Logic (Pure CSS) --- */
+.faq-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* By default (closed), hide Minus and show Plus */
+.faq-card:not([open]) .icon-minus {
+  display: none;
+}
+.faq-card:not([open]) .icon-plus {
+  display: block;
+}
+
+/* When [open], hide Plus and show Minus */
+.faq-card[open] .icon-plus {
+  display: none;
+}
+.faq-card[open] .icon-minus {
+  display: block;
+}
+
+/* Rotate the icon wrapper slightly when opened for fluid feel */
+.faq-card[open] .faq-icon {
+  transform: rotate(180deg);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+/* --- Answer Content --- */
+.faq-content {
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  animation: fadeInDown 0.3s ease forwards;
+}
+
+.faq-content p {
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .faq-section .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .faq-stack-container {
+    max-width: 100%;
+    padding-bottom: 2rem;
+    gap: 0.75rem;
+  }
+
+  .faq-card {
+    padding: 1rem;
+    border-radius: 12px;
+    position: relative;
+    top: auto !important;
+  }
+
+  .faq-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .faq-summary h5 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .faq-summary .mr-2 {
+    margin-right: 0.5rem;
+  }
+
+  .faq-icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 0.1rem;
+  }
+
+  .faq-content {
+    padding-top: 0.9rem;
+    margin-top: 0.9rem;
+  }
+
+  .faq-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

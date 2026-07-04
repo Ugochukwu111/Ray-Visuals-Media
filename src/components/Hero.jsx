@@ -1,0 +1,42 @@
+import { FaWhatsapp, FaInstagram,} from "react-icons/fa6";
+import './Hero.css';
+import profile from "../assets/images/ray-visuals.webp";
+
+
+export default function Hero() {
+  return (
+     <section className="flex flex-col  items-center justify-between hero-section h-screen ">
+             <div className="container flex flex-col justify-end items-center  flex-1  ">
+               <div className="flex flex-col justify-center  items-center hero-content">
+                 <FaWhatsapp size={50} className="hero-whats-app-icon" />
+                 <FaInstagram size={50} className="hero-ig-icon" />
+                 <h1 className="text-center text-inverse">
+                   Ray Visuals Media <br /> Every Frame Tells a story
+                 </h1>
+                 <p className="text-inverse text-center">
+                   A premium production house specializing in high-end commercial
+                   and editorial videography.
+                   <br />
+                   Translating bold concepts into striking visual narratives.
+                 </p>
+                 <div className="flex gap-1 hero-buttons">
+                   <button className="btn btn-primary">Discuss a Project</button>
+                   <button className="btn  bg-white">Explore Visuals</button>
+                 </div>
+               </div>
+   
+             </div>
+                       <figure className="hero-img-container flex-1 hero-video-wrapper">
+               <video
+                 src="https://res.cloudinary.com/dy4qtrmgz/video/upload/v1778295661/Day_1_at_the_PAPSS_COWRY_2025_it_was_an_honor_capturing_this_memorable_conference_that_brought_bx81ed.mp4"
+                 autoPlay
+                 loop
+                 muted
+                 className="hero-img"
+                //  poster={profile}
+               ></video>
+             </figure>
+   
+           </section>
+  )
+}

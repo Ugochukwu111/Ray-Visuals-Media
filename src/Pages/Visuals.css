@@ -1,0 +1,144 @@
+
+
+/* 
+===============================================
+ABOUT US SECTION
+===============================================
+
+*/
+
+.about-us-section figure {
+  width: 100%;
+  max-width: 450px;
+  height: 480px;
+  align-self: stretch;
+  border-radius: 0.5rem;
+}
+
+.about-us-section .our-numbers-container {
+  border-radius: 0.5rem;
+  padding: 1.5em 1em;
+}
+
+.about-us-section .our-numbers-container .number {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2.5rem);
+}
+
+
+
+.founder-section .meet{
+  font-size: 1.5rem;
+}
+
+.founder-section .content{
+  max-width: 600px;
+  padding: 1em;
+}
+
+.founder-section .founder-img-wrapper{
+  width: 100%;
+  max-width: 400px;
+  height : 350px;
+  padding:1em;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transform: rotate(-5deg);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.founder-img-wrapper:has(figure:hover){
+  transform: rotate(0deg);
+}
+
+.founder-section{
+  position: relative;
+
+}
+
+.founder-section .black-background{
+  background-color: var(--black);
+  position: absolute;
+  height: 60%;
+  bottom: 0;
+  width: 100%;
+}
+
+.founder-section .founder-container{
+  z-index: 10;
+  position: relative;
+  border-radius: .5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255,255,255,0.15);
+}
+
+.founder-section  figure{
+  transform: rotate(10deg);
+  border-radius: inherit;
+  transition: transform 0.3s ease;
+}
+
+.founder-section  figure:hover{
+    transform: rotate(0deg);
+}
+
+ 
+
+@media (max-width:1000px){
+  .about-us-container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-us-container figure{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .founder-section .founder-container{
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    padding-top: 2em;
+    background-color: transparent;
+  }
+
+  .founder-section h2{
+    color: var(--text-inverse);
+  }
+   .founder-section p span{
+    color: var(--text-inverse);
+   }
+}
+
+/* @media (max-width: 768px) {
+  .about-us-section figure {
+    height: auto;
+    max-height: 320px;
+  }
+
+  .about-us-section .our-numbers-container {
+    padding: 1em;
+  }
+
+  .founder-section .founder-img-wrapper {
+    max-width: 100%;
+    height: auto;
+    padding: 0.5em;
+    transform: none;
+  }
+
+  .founder-section .founder-container {
+    padding: 1rem 0.75rem;
+    box-shadow: none;
+  }
+
+  .founder-section .black-background {
+    height: 45%;
+  }
+
+  .founder-section .content {
+    padding: 0.75rem 0;
+  }
+} */

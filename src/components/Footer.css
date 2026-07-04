@@ -1,0 +1,35 @@
+
+
+footer{
+  padding: 5em .5em;
+  display: grid;
+  place-items: center;
+  padding-bottom: 0;
+}
+
+footer ul{
+  list-style: none;
+}
+
+footer .large-text{
+  font-size: clamp(2.25rem, 1.5rem + 4vw, 4.5rem);
+  letter-spacing: 20px ;
+  padding-top: 2em;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 3rem 0.75rem 1rem;
+  }
+
+  footer .large-text {
+    font-size: clamp(1.2rem, 1rem + 3vw, 2rem);
+    letter-spacing: 0.1rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  footer ul {
+    padding: 0;
+  }
+}

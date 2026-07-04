@@ -1,0 +1,87 @@
+.project-section {
+  position: relative;
+}
+
+.projects-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.project-slider {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.project-card {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  position: relative; /* Added so content can be positioned over the video */
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  background: #000; /* Fallback background while video loads */
+  position: relative;
+}
+
+/* Your global video styles applied here */
+.project-card video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  z-index: 1; /* Keep video behind the text */
+}
+
+/* Optional styling for the text overlay */
+.project-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  margin-bottom: 3rem;
+  padding: 0.5em;
+  max-width: 600px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Optional: adds a shadow for better readability */
+
+  opacity: 0;
+  transform: translateY(40px); /* Pushes the text down initially */
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.project-content h2 {
+  font-size: 4rem;
+  margin: 0 0 1rem 0;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out 0.2s,
+    transform 0.6s ease-out 0.2s;
+}
+
+.project-content p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out 0.4s,
+    transform 0.6s ease-out 0.4s;
+}
+
+/* Animated visible state (Triggered by JS) */
+.project-card.is-visible .project-content,
+.project-card.is-visible .project-content h4,
+.project-card.is-visible .project-content p {
+  opacity: 1;
+  transform: translateY(0); /* Returns to original position */
+}

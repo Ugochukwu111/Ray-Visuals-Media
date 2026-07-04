@@ -1,0 +1,91 @@
+nav {
+  position: fixed;
+  top: .5em;
+  width: 100%;
+  z-index: 99;
+}
+
+nav ul {
+  list-style: none;
+}
+
+.logo-nav-bar-wrapper {
+  padding: .5em .8em;
+  border-radius: .4rem ;
+
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255,255,255,0.15);
+
+  background: rgba(255, 255, 255, 0.08); 
+
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+
+nav ul::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.22),
+      rgba(255,255,255,0.05) 40%,
+      transparent 60%
+    );
+
+  pointer-events: none;
+  filter: url(#glass-distortion);
+}
+
+
+nav ul li a {
+  position: relative; 
+  text-decoration: none;
+  padding: .5em .8em;
+  border-radius: .4rem;
+}
+
+nav ul li a.active {
+  color: var(--text-primary);
+}
+
+
+.tab-bubble {
+  position: absolute;
+  inset: 0; 
+  background-color: var(--text-inverse); 
+  border-radius: .4rem;
+  z-index: -1; 
+}
+
+.hero-img-container {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  nav {
+    top: 0.25rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.25rem;
+  }
+
+  nav ul li a {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .logo-nav-bar-wrapper {
+    padding: 0.4rem 0.6rem;
+  }
+}
