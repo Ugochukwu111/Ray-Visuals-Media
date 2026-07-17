@@ -77,7 +77,7 @@ export default function Testimonials() {
 
   return (
     <section className="section-padding bg-black testimonial-section">
-      <div className="container">
+      <div className="container testimonial-container">
         <h4 className="text-center text-inverse">
           <span className="text-success">{testimonialsData.length + 10}+ Test</span>imonials{" "}
           <span className="text-success">!</span>{" "}
@@ -119,11 +119,14 @@ export default function Testimonials() {
             Build your next project <FastForward size={18} />
           </button>
         </div>
+
       </div>
 
-      <div className="ambient-shape shape-green"></div>
+              <div className="ambient-shape shape-green"></div>
       <div className="ambient-shape shape-white"></div>
       <div className="ambient-shape shape-blue"></div>
+
+      
     </section>
   );
 }
