@@ -71,6 +71,7 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   min-height: 100svh;
+  display: none;
 }
 
 img, video {
